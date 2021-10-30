@@ -1,0 +1,60 @@
+:root {
+  font-size: 62.5%;
+  --clr-primary: hsl(183, 100%, 15%);
+  --clr-secondary: hsl(172, 67%, 45%);
+  --clr-secondary-m: hsla(172, 67%, 45% , 0.9);
+  --clr-tertiary: hsl(186, 14%, 43%);
+  --clr-quaternary: hsl(184, 14%, 56%);
+  --clr-quinary: hsl(185, 41%, 84%);
+  --clr-hexany: hsl(189, 41%, 97%);
+  --clr-white: hsl(0, 0%, 100%);
+  --fz-form-input: 2.4rem;
+}
+
+html , body {
+    height: 100%;
+}
+
+body {
+  font-size: 1rem;
+  font-family: 'Space Mono', monospace;
+  line-height: 1.6;
+  background-color: var(--clr-quinary);
+
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-evenly;
+  align-items: center;
+
+  @include media-tablet {
+    .attribution {
+      display: none;
+    }
+  }
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+a:link,
+a:visited {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--clr-white);
+}
+
+input[type=text] {
+  font-family: 'Space Mono', monospace;
+  font-weight: font-weight(font-weight-bold);
+}
+
+input[type=text] {
+  min-width: 0;
+  box-sizing: border-box !important;
+}

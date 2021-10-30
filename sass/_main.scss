@@ -1,0 +1,203 @@
+.container {
+  & > * {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__left {
+    gap: 5rem;
+    // background-color: red;
+    &--amountInput {
+      // background-color: gold;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      & > p {
+        @extend %label;
+      }
+
+      &__input {
+        position: relative;
+        // background-color: blue;
+        height: 5rem;
+
+        .input {
+          border-radius: 0.5rem;
+          width: 100%;
+          height: 100%;
+          direction: rtl;
+          border: none;
+          outline: none;
+          background-color: var(--clr-hexany);
+          padding: 2rem;
+
+          font-size: font-size(font-size-regular);
+          color: var(--clr-primary);
+          //   transition: all 0.3s ease-in-out;
+        }
+
+        .input:focus {
+          border: 0.3rem solid var(--clr-secondary);
+        }
+
+        img {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 1.5rem;
+        }
+      }
+    }
+
+    &--tipPercentage {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      & > p {
+        @extend %label;
+      }
+
+      &__choices {
+        display: grid;
+        grid: repeat(2, 1fr) / repeat(3, 1fr);
+        gap: 1.5rem;
+
+        button {
+          border: none;
+          background-color: var(--clr-primary);
+          color: var(--clr-white);
+          border-radius: 0.5rem;
+          font-size: font-size(font-size-regular);
+          font-weight: font-weight(font-weight-bold);
+          padding: 0.5rem 0;
+          transition: all 0.3s ease-out;
+
+          @extend %font-family;
+        }
+
+        button:hover {
+          background-color: var(--clr-secondary-m);
+          color: var(--clr-primary);
+        }
+
+        button.selected {
+          background-color: var(--clr-secondary-m);
+          color: var(--clr-primary);
+        }
+
+        input[type="text"] {
+          padding: 1rem;
+          font-size: 2.2rem;
+          color: var(--clr-primary);
+          direction: rtl;
+          outline: none;
+          border: none;
+          border-radius: 0.5rem;
+          //   transition: all 0.3s ease-in-out;
+          box-sizing: border-box !important;
+
+          background-color: var(--clr-hexany);
+        }
+
+        input[type="text"]:focus {
+          border: 0.3rem solid var(--clr-secondary);
+        }
+      }
+    }
+
+    &--nop {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      &__labels {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+
+        p {
+          @extend %label;
+        }
+
+        & > p:nth-child(2) {
+          color: #d18376;
+          display: none;
+        }
+
+        p.invalid {
+          color: #d18376;
+          display: block;
+        }
+
+        // @include media-tablet {
+        //     p {
+        //         font-size: 1.5rem !important;
+        //     }
+        // }
+      }
+
+      &__input {
+        @extend .container__left--amountInput__input;
+
+        input[type=text].invalid {
+          transition: all 0.3s ease;
+          border: 0.3rem solid #d18376;
+        } 
+      }
+    }
+  }
+
+  &__right {
+    background-color: var(--clr-primary);
+    color: var(--clr-white);
+    padding: 5rem 4rem 4rem;
+
+    border-radius: 1.5rem;
+
+    &--tip,
+    &--total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      font-size: font-size(font-size-small);
+      font-weight: font-weight(font-weight-bold);
+      letter-spacing: 0.1rem;
+
+      p span {
+        display: block;
+        color: var(--clr-quaternary);
+        font-size: 0.8em;
+      }
+
+      h2 {
+        color: var(--clr-secondary);
+        font-size: font-size(font-size-large);
+      }
+    }
+
+    button {
+      margin-top: auto;
+
+      border: none;
+      outline: none;
+      background-color: var(--clr-secondary-m);
+      padding: 0.8rem 0;
+      font-size: 2rem;
+      font-weight: font-weight(font-weight-bold);
+      color: var(--clr-primary);
+      border-radius: 0.5rem;
+      transition: background-color 0.3s ease;
+
+      @extend %font-family;
+    }
+
+    button:hover {
+      background-color: hsla(0, 0%, 100% , .8);
+    }
+  }
+}
+

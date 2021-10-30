@@ -1,0 +1,30 @@
+.container {
+    background-color: var(--clr-white);
+    margin-top: 10vh;
+    width: unquote($string: "min(100% , 85rem)");
+    border-radius: 3rem;
+    padding: 4rem;
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 3rem;
+
+    & > * {
+        flex: 1 1;
+        min-width: 30rem;
+    }
+
+    @include media-tablet {
+        padding: 3rem;
+        border-radius: 3rem 3rem 0 0;
+    }
+
+    @include media-mobile {
+        margin-top: 7vh;
+    }
+
+    @include media-small {
+        padding: 2rem;
+    }
+}

@@ -1,0 +1,10 @@
+.logo {
+    margin-top: 16vh;
+    height: 5rem;
+
+    @include media-mobile {
+        margin-top: 7vh;
+
+        height: 7rem;
+    }
+}
