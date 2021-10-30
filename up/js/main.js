@@ -73,7 +73,8 @@ function calculateTotal(percentage) {
   }
 
   let currentTip = (percentage / 100) * parseFloat(bill.value);
-  let totalTip = currentTip * parseInt(numberOfPeople.value);
+  // let totalTip = currentTip * parseInt(numberOfPeople.value);
+  let totalTip = (parseFloat(bill.value) / parseInt(numberOfPeople.value)) + currentTip;
 
   tip.textContent = `$${currentTip.toFixed(2)}`;
   total.textContent = `$${totalTip.toFixed(2)}`;
