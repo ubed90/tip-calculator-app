@@ -55,14 +55,28 @@ a:visited {
   color: var(--clr-white);
 }
 
-input[type=text] {
+input[type=number] {
+  -moz-appearance: textfield;
   font-family: 'Space Mono', monospace;
   font-weight: 700;
-}
-
-input[type=text] {
   min-width: 0;
   box-sizing: border-box !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.attribution a {
+  color: #3e52a3;
 }
 
 .logo {
@@ -138,7 +152,7 @@ input[type=text] {
   border-radius: 0.5rem;
   width: 100%;
   height: 100%;
-  direction: rtl;
+  text-align: right;
   border: none;
   outline: none;
   background-color: var(--clr-hexany);
@@ -191,7 +205,7 @@ input[type=text] {
   color: var(--clr-primary);
 }
 
-.container__left--tipPercentage__choices input[type="text"] {
+.container__left--tipPercentage__choices input[type="number"] {
   padding: 1rem;
   font-size: 2.2rem;
   color: var(--clr-primary);
@@ -203,7 +217,7 @@ input[type=text] {
   background-color: var(--clr-hexany);
 }
 
-.container__left--tipPercentage__choices input[type="text"]:focus {
+.container__left--tipPercentage__choices input[type="number"]:focus {
   border: 0.3rem solid var(--clr-secondary);
 }
 

@@ -49,12 +49,25 @@ a:visited {
     color: var(--clr-white);
 }
 
-input[type=text] {
+input[type=number] {
+  -moz-appearance: textfield;
   font-family: 'Space Mono', monospace;
   font-weight: font-weight(font-weight-bold);
-}
-
-input[type=text] {
   min-width: 0;
   box-sizing: border-box !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 5rem;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }

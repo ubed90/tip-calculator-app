@@ -27,7 +27,8 @@
           border-radius: 0.5rem;
           width: 100%;
           height: 100%;
-          direction: rtl;
+          // direction: rtl;
+          text-align: right;
           border: none;
           outline: none;
           background-color: var(--clr-hexany);
@@ -88,7 +89,7 @@
           color: var(--clr-primary);
         }
 
-        input[type="text"] {
+        input[type="number"] {
           padding: 1rem;
           font-size: 2.2rem;
           color: var(--clr-primary);
@@ -102,7 +103,7 @@
           background-color: var(--clr-hexany);
         }
 
-        input[type="text"]:focus {
+        input[type="number"]:focus {
           border: 0.3rem solid var(--clr-secondary);
         }
       }

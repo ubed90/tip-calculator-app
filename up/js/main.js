@@ -31,6 +31,10 @@ tipPercentages.forEach(function (entry) {
   });
 });
 
+bill.addEventListener("input", function (e) {
+  inputManager();
+});
+
 customTip.addEventListener("input", function (e) {
   if (parseInt(customTip.value < 0) || customTip.value === "") return;
 
@@ -47,6 +51,8 @@ numberOfPeople.addEventListener("input", function () {
   } else {
     this.classList.remove("invalid");
     invalid.classList.remove("invalid");
+
+    inputManager();
   }
 });
 
@@ -72,10 +78,20 @@ function calculateTotal(percentage) {
     return;
   }
 
-  let currentTip = (percentage / 100) * parseFloat(bill.value);
-  // let totalTip = currentTip * parseInt(numberOfPeople.value);
-  let totalTip = (parseFloat(bill.value) / parseInt(numberOfPeople.value)) + currentTip;
+  let overallBill, nop, amountPerPerson;
+  overallBill = parseFloat(bill.value);
+  nop = parseInt(numberOfPeople.value);
+  amountPerPerson = overallBill / nop;
 
-  tip.textContent = `$${currentTip.toFixed(2)}`;
-  total.textContent = `$${totalTip.toFixed(2)}`;
+  let tipPerPerson = (percentage / 100) * amountPerPerson;
+  // let totalTip = currentTip * parseInt(numberOfPeople.value);
+  let totalPerPerson = amountPerPerson + tipPerPerson;
+
+  tip.textContent = `$${tipPerPerson.toFixed(2)}`;
+  total.textContent = `$${totalPerPerson.toFixed(2)}`;
+}
+
+function inputManager() {
+  selectedPercentage = document.querySelector(".selected") || customTip;
+  calculateTotal(parseInt(selectedPercentage.value));
 }
